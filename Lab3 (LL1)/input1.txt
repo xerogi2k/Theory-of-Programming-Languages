@@ -1,0 +1,15 @@
+PROGRAM Test;
+BEGIN
+  INT x := 5;
+  INT y := 10;
+
+  IF (x == y) BEGIN
+    PRINT 'Equal';
+  END;
+
+  WHILE (x < y) BEGIN
+    x := x + 1;
+  END;
+
+  y := x * 2;
+END.
