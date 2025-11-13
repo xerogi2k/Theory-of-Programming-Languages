@@ -1,0 +1,16 @@
+<program> -> <functions>
+<functions> -> <function> semicolon | <function> semicolon <functions>
+<function> -> <ifFunc> | <whileFunc> | <action>
+<ifFunc> -> if bracket_open <conditions> bracket_close brace_open <actions> brace_close | if bracket_open <conditions> bracket_close brace_open <actions> brace_close else brace_open <actions> brace_close
+<whileFunc> -> while bracket_open <conditions> bracket_close brace_open <actions> brace_close
+<conditions> -> <condition> | <condition> <conditionSign> <conditions>
+<conditionsSign> and | or
+<condition> -> <smth> <comparison> <smth>
+<comparison> -> not_equal | strict_equal | equal | less_equal | greater_equal | less | greater
+<actions> -> <action> semicolon | <action> semicolon <actions>
+<action> -> <assignmentAction>
+<assignmentAction> -> <type> <id> set <smth> | <id> set <smth>
+<type> -> int | double | bool
+<smth> -> scientific_float | float | scientific | integer | true | false | <id> | <id> <calculationSign> <id>
+<calculationSign> -> plus | minus | multiply | divide | module
+<id> -> public_id | private_id

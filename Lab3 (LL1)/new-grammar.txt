@@ -1,0 +1,16 @@
+<axiom> -> <program> # | IF
+<program> -> <functions> | IF
+<functions> -> <function> SEMICOLON | IF
+<function> -> <ifFunc> | <whileFunc> | <action> | IF
+<ifFunc> -> IF LEFT_PAREN <conditions> RIGHT_PAREN BEGIN <actions> END | IF
+<whileFunc> -> WHILE LEFT_PAREN <conditions> RIGHT_PAREN BEGIN <actions> END | WHILE
+<conditions> -> <condition> | FLOAT
+<condition> -> <smth> <comparison> <smth> | FLOAT
+<comparison> -> NOT_EQ | EQ | LESS_EQ | GREATER_EQ | LESS | GREATER | NOT_EQ
+<actions> -> <action> SEMICOLON | INT
+<action> -> <assignmentAction> | INT
+<assignmentAction> -> <type> <id> ASSIGN <smth> | INT
+<type> -> INT | REAL | TRUE | FALSE | INT
+<smth> -> FLOAT | INTEGER | TRUE | FALSE | <id> | <id> <calculationSign> <id> | FLOAT
+<calculationSign> -> PLUS | MINUS | MULTIPLICATION | DIVIDE | MOD | PLUS
+<id> -> IDENTIFIER | IDENTIFIER

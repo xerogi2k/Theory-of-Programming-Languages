@@ -1,0 +1,35 @@
+<program>       -> <functions>
+
+<functions>     -> <function> SEMICOLON
+                | <function> SEMICOLON <functions>
+
+<function>      -> <ifFunc> | <whileFunc> | <action>
+
+<ifFunc>       -> IF LEFT_PAREN <conditions> RIGHT_PAREN BEGIN <actions> END
+                | IF LEFT_PAREN <conditions> RIGHT_PAREN BEGIN <actions> END ELSE BEGIN <actions> END
+
+<whileFunc>     -> WHILE LEFT_PAREN <conditions> RIGHT_PAREN BEGIN <actions> END
+
+<conditions>    -> <condition>
+                | <condition> AND <conditions>
+                | <condition> OR <conditions>
+
+<condition>     -> <smth> <comparison> <smth>
+
+<comparison>    -> NOT_EQ | EQ | LESS_EQ | GREATER_EQ | LESS | GREATER
+
+<actions>      -> <action> SEMICOLON
+                | <action> SEMICOLON <actions>
+
+<action>       -> <assignmentAction>
+
+<assignmentAction> -> <type> <id> ASSIGN <smth>
+                   | <id> ASSIGN <smth>
+
+<type>         -> INT | REAL | TRUE | FALSE
+
+<smth>         -> FLOAT | INTEGER | TRUE | FALSE | <id> | <id> <calculationSign> <id>
+
+<calculationSign> -> PLUS | MINUS | MULTIPLICATION | DIVIDE | MOD
+
+<id>           -> IDENTIFIER
